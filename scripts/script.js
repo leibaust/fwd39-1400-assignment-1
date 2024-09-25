@@ -1,7 +1,7 @@
-// Variables or log in and log out buttons
+// Constant variables or log in and log out buttons
 const btnIn = document.getElementById('btn-log-in');
 const btnOut = document.getElementById('btn-log-out');
-// Variable for output
+// Constant variables for output
 const out = document.getElementById('output');
 
 // Event listener for log in button
