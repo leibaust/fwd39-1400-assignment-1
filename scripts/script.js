@@ -1,4 +1,36 @@
 // Variables or log in and log out buttons
-const btnIn = document.querySelector('.btn-in');
-const btnOut = document.querySelector('.btn-out');
+const btnIn = document.getElementById('btn-log-in');
+const btnOut = document.getElementById('btn-log-out');
+// Variable for output
+const out = document.getElementById('output');
 
+// Event listener for log in button
+btnIn.addEventListener('click', function() {
+    const username = prompt('Enter your name');
+    out.innerHTML = `Hello, ${username}`;
+// Hide log in button once logged in
+    btnIn.style.display = 'none';
+    btnIn.setAttribute('disabled', 'disabled');
+// Show log out button once logged in
+    btnOut.style.display = 'block';
+    btnOut.removeAttribute('disabled');
+}
+)
+
+// Event listener for log out button
+btnOut.addEventListener('click', function() {
+    let logout = confirm('Are you sure you want to log out?');
+// If user confirms log out, display message and show log in button
+    if (logout == true) {
+        out.innerHTML = 'You are now logged out. Click the login button to log in again.';
+        btnIn.style.display = 'block';
+        btnIn.removeAttribute('disabled');
+        btnOut.style.display = 'none';
+        btnOut.setAttribute('disabled', 'disabled');
+    }
+// If user cancels log out, display message
+    else {
+        out.innerHTML = 'You are still logged in.';
+    }
+}   
+)
